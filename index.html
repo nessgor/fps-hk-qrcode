@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>FPS QR Code Generator</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div id="qrcode" class="contact1-pic">
+				<img src="images/img-01.png" alt="IMG">
+			</div>
+
+			<form class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					FPS QR Code Generator
+				</span>
+
+				<span>
+					<label>CAUTION: This is NOT official generator. For more information, please visit <a href="https://ffo.hkma.gov.hk/download/Common_QR_Code_Specification_for_Retail_Payments_in_HK_v1_0.pdf"
+						 target="_blank">here</a>.</label>
+				</span>
+
+				<div class="wrap-input1 validate-input">
+					<label>Select an account</label>
+					<select class="input1" name="account">
+						<option value="02">FPS ID</option>
+						<option value="03">Mobile number</option>
+						<option value="04">Email</option>
+					</select>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1 account" name="bank_code" placeholder="Bank Code (e.g. HSBC: 004, HSB: 024)"
+					 style="display: none;"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1 account" name="fps_id" placeholder="FPS ID"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1 account" name="mobile" placeholder="Mobile Number (e.g. +852-67891234)" style="display: none;"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1 account" name="email" placeholder="Email" style="display: none;"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1" name="mcc" value="0000" placeholder="Merchant Category Code (Default: 0000)"
+					 style="display: none;"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1" name="currency" value="344" placeholder="Transaction Currency [ISO 4217] (HKD: 344)"
+					 style="display: none;"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1" name="amount" placeholder="Transaction Amount (Optional)"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<textarea class="input1" name="message" placeholder="Message" disable style="display: none;"></textarea>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<input type="text" class="input1" name="hash" placeholder="Hash" disabled style="display: none;"></input>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn">
+						<span>Generate</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script src="js/pad.js"></script>
+	<script src="js/emv-code.js"></script>
+	<script src="js/crc-16-ccitt.js"></script>
+	<script src="js/qrcode.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
