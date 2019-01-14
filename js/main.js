@@ -12,18 +12,21 @@
     var currency = $('.validate-input :input[name="currency"]');
     var amount = $('.validate-input :input[name="amount"]');
     var message = $('.validate-input :input[name="message"]');
+    var reference = $('.validate-input :input[name="reference"]');
     var hash = $('.validate-input :input[name="hash"]');
 
 
     $('.validate-form').on('submit', function () {
         var msg = emvEncode({
+            "account": account.val(),
             "bank_code": bank_code.val(),
             "fps_id": fps_id.val(),
             "mobile": mobile.val(),
             "email": email.val(),
             "mcc": mcc.val(),
             "currency": currency.val(),
-            "amount": amount.val()
+            "amount": amount.val(),
+            "reference": reference.val()
         });
 
         var crc = crc16(msg).toString(16).pad(4).toUpperCase();

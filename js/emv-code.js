@@ -29,6 +29,8 @@ function emvEncode(obj) {
     var merchantName = dataObj("59", "NA");
     var merchantCity = dataObj("60", "HK");
     var transactionAmount = (obj.amount == "") ? "" : dataObj("54", obj.amount);
+    var reference = (obj.reference == "") ? "" : dataObj("05", obj.reference);
+    var additionalDataTemplate = (reference == "") ? "" : dataObj("62", reference);
 
     var msg = ""
     msg += payloadFormatIndicator;
@@ -40,6 +42,7 @@ function emvEncode(obj) {
     msg += merchantName;
     msg += merchantCity;
     msg += transactionAmount;
+    msg += additionalDataTemplate;
     msg += "6304";
 
     return msg;
